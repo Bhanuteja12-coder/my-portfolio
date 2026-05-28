@@ -33,6 +33,7 @@ my-portfolio/
 ├── backend/
 │   ├── config/
 │   ├── portfolio/
+│   ├── projects/
 │   └── manage.py
 │
 ├── frontend/
@@ -70,6 +71,7 @@ npm run dev
 
 ```text
 GET /api/profile/
+GET /api/projects/
 ```
 
 ## Current Progress
@@ -79,7 +81,7 @@ GET /api/profile/
 - [x] Profile API created
 - [x] React frontend setup
 - [x] API connected to frontend
-- [ ] Projects API
+- [x] Projects API
 - [ ] Contact API
 - [ ] PostgreSQL integration
 - [ ] Deployment
