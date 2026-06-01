@@ -5,7 +5,7 @@ class Projects(models.Model):
     teck_stack = models.CharField(max_length=150)
     bio = models.TextField()
     github_link = models.URLField()
-    demo_link = models.URLField()
+    demo_link = models.URLField(blank=True, null=True)
 
     def __str__(self):
         return self.name

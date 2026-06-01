@@ -5,6 +5,7 @@ import './App.css';
 function App() {
   const [profile, setProfile] = useState([]);
   const [projects, setProjects] = useState([]);
+  const [skills, setSkills] = useState([]);
 
   useEffect(() => {
     axios
@@ -20,6 +21,15 @@ function App() {
         .get("http://127.0.0.1:8000/api/projects/")
         .then((response) => {
           setProjects(response.data);
+        })
+        .catch((error) => {
+          console.log(error);
+        })
+
+      axios
+        .get("http://127.0.0.1:8000/api/skills/")
+        .then((response) => {
+          setSkills(response.data);
         })
         .catch((error) => {
           console.log(error);
@@ -59,6 +69,17 @@ function App() {
             </div>
           </div>
       ))}
+      </div>
+
+      <hr/>
+
+      <h2>Skills</h2>
+      <div>
+        {skills.map((skill) => (
+          <div key={skill.id}>
+            <h3>{skill.name} - {skill.category}</h3>
+          </div>
+        ))}
       </div>
     </div>
   );
