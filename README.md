@@ -1,6 +1,6 @@
 # My Portfolio Website
 
-A full-stack portfolio website built using React.js, Django REST Framework, and PostgreSQL.
+A Full-Stack Portfolio website built using React.js, Django REST Framework, and PostgreSQL.
 
 ## Tech Stack
 
