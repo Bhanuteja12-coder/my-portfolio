@@ -34,6 +34,7 @@ my-portfolio/
 │   ├── config/
 │   ├── portfolio/
 │   ├── projects/
+│   ├── skills/
 │   └── manage.py
 │
 ├── frontend/
@@ -72,6 +73,7 @@ npm run dev
 ```text
 GET /api/profile/
 GET /api/projects/
+GET /api/skills/
 ```
 
 ## Current Progress
