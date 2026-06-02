@@ -45,15 +45,14 @@ function App() {
           <h2>{item.name}</h2>
           <p>{item.title}</p>
           <p>{item.bio}</p>
-        <div className='links'> 
+          <div className='profile-footer'>
             <a href={item.github} target='_blank'>github</a>
-            <br/>
             <a href={item.linkedin} target='_blank'>linkedin</a>
-            </div>
+          </div>
         </div>
       ))}
 
-      <hr/>
+      <hr className='section-divider'/>
 
       <h2 className='projects-title'>Projects</h2>
       <div className='projects-grid'>
@@ -73,13 +72,73 @@ function App() {
 
       <hr/>
 
-      <h2>Skills</h2>
-      <div>
-        {skills.map((skill) => (
-          <div key={skill.id}>
-            <h3>{skill.name} - {skill.category}</h3>
-          </div>
-        ))}
+      <h2 className='skills-title'>Skills</h2>
+      <div className='skills-grid'>
+        <div className='skills-card'>
+          <h3>Languages</h3>
+          <ul>
+            {skills
+              .filter((skill) => skill.category === "Language")
+              .map((skill) => (
+                <li key={skill.id}>{skill.name}</li>
+              ))}
+          </ul>
+        </div>
+
+        <div className='skills-card'>
+          <h3>Frameworks</h3>
+          <ul>
+            {skills
+              .filter((skill) => skill.category === "Framework")
+              .map((skill) => (
+                <li key={skill.id}>{skill.name}</li>
+              ))}
+          </ul>
+        </div>
+
+        <div className='skills-card'>
+          <h3>Tools</h3>
+          <ul>
+            {skills
+              .filter((skill) => skill.category === "Tool")
+              .map((skill) => (
+                <li key={skill.id}>{skill.name}</li>
+              ))}
+          </ul>
+        </div>
+
+        <div className='skills-card'>
+          <h3>Databases</h3>
+          <ul>
+            {skills
+              .filter((skill) => skill.category === "Database")
+              .map((skill) => (
+                <li key={skill.id}>{skill.name}</li>
+              ))}
+          </ul>
+        </div>
+
+        <div className='skills-card'>
+          <h3>Platforms</h3>
+          <ul>
+            {skills
+              .filter((skill) => skill.category === "Platform")
+              .map((skill) => (
+                <li key={skill.id}>{skill.name}</li>
+              ))}
+          </ul>
+        </div>
+
+        <div className='skills-card'>
+          <h3>Soft skills</h3>
+          <ul>
+            {skills
+              .filter((skill) => skill.category === "Sokt skill")
+              .map((skill) => (
+                <li key={skill.id}>{skill.name}</li>
+              ))}
+          </ul>
+        </div>
       </div>
     </div>
   );

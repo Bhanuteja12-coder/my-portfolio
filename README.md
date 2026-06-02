@@ -82,6 +82,7 @@ GET /api/projects/
 - [x] React frontend setup
 - [x] API connected to frontend
 - [x] Projects API
+- [x] Skills API
 - [ ] Contact API
 - [ ] PostgreSQL integration
 - [ ] Deployment
