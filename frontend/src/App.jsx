@@ -6,6 +6,41 @@ function App() {
   const [profile, setProfile] = useState([]);
   const [projects, setProjects] = useState([]);
   const [skills, setSkills] = useState([]);
+  const [contact, setContact] = useState({
+  name: "",
+  email: "",
+  message: ""
+});
+
+  const handleChange = (e) => {
+  setContact({
+    ...contact,
+    [e.target.name]: e.target.value
+  });
+};
+
+  const handleSubmit = async (e) => {
+  e.preventDefault();
+
+  try {
+    await axios.post(
+      "http://127.0.0.1:8000/api/contact/",
+      contact
+    );
+
+    alert("Message sent successfully");
+
+    setContact({
+      name: "",
+      email: "",
+      message: ""
+    });
+
+  } catch (error) {
+    console.log(error);
+    alert("Something went wrong");
+  }
+};
 
   useEffect(() => {
     axios
@@ -140,7 +175,36 @@ function App() {
           </ul>
         </div>
       </div>
-    </div>
+
+      <form className='form-card' onSubmit={handleSubmit}>
+
+      <input
+        name="name"
+        value={contact.name}
+        onChange={handleChange}
+        placeholder="Name"
+      />
+
+      <input
+        name="email"
+        value={contact.email}
+        onChange={handleChange}
+        placeholder="Email"
+      />
+
+      <textarea
+        name="message"
+        value={contact.message}
+        onChange={handleChange}
+        placeholder="Message"
+      />
+
+      <button type="submit">
+        Send
+      </button>
+
+      </form>
+  </div>
   );
 }
 
