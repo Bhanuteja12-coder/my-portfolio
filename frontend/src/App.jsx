@@ -73,8 +73,74 @@ function App() {
 
   return (
     <div className="container">
-      <h1 className="main-title">My Portfolio</h1>
 
+      <nav className="navbar">
+
+  <a href="#hero" className="logo">
+    My Portfolio
+  </a>
+
+  <div className="nav-links">
+    <a href="#profile">Profile</a>
+    <a href="#projects">Projects</a>
+    <a href="#skills">Skills</a>
+    <a href="#contact">Contact</a>
+  </div>
+
+</nav>
+
+
+      {/* Hero Section */}
+<section id="hero" className="hero">
+
+  <div className="hero-content">
+
+    <h1>
+      Hi, I'm <span>Bhanu Teja</span>
+    </h1>
+
+    <h2>
+      Full Stack Developer
+    </h2>
+
+    <p>
+      I build modern web applications using React.js, Django, 
+      Django REST Framework and PostgreSQL.
+    </p>
+
+    <div className="hero-buttons">
+
+      <a href="#projects" className="btn primary">
+        View Projects
+      </a>
+
+      <a href="#contact" className="btn secondary">
+        Contact Me
+      </a>
+
+    </div>
+
+  </div>
+
+
+  <div className="hero-card">
+
+    <div>
+      <h3>Tech Stack</h3>
+
+      <p>Python</p>
+      <p>Django</p>
+      <p>React.js</p>
+      <p>PostgreSQL</p>
+
+    </div>
+
+  </div>
+
+</section>
+
+      <h1 className="main-title">My Portfolio</h1>
+      <section id='profile'>
       {profile.map((item) => (
         <div className='profile-section' key={item.id}>
           <h2>{item.name}</h2>
@@ -86,11 +152,12 @@ function App() {
           </div>
         </div>
       ))}
+      </section>
 
       <hr className='section-divider'/>
 
       <h2 className='projects-title'>Projects</h2>
-      <div className='projects-grid'>
+      <section id='projects' className='projects-grid'>
         {projects.map((project) => (
           <div className='projects-card' key={project.id}>
             <h3>{project.name}</h3>
@@ -103,12 +170,12 @@ function App() {
             </div>
           </div>
       ))}
-      </div>
+      </section>
 
       <hr/>
 
       <h2 className='skills-title'>Skills</h2>
-      <div className='skills-grid'>
+      <section id='skills' className='skills-grid'>
         <div className='skills-card'>
           <h3>Languages</h3>
           <ul>
@@ -165,7 +232,7 @@ function App() {
         </div>
 
         <div className='skills-card'>
-          <h3>Soft skills</h3>
+            <h3>Soft skills</h3>
           <ul>
             {skills
               .filter((skill) => skill.category === "Sokt skill")
@@ -174,7 +241,10 @@ function App() {
               ))}
           </ul>
         </div>
-      </div>
+      </section>
+
+      <h3 className='skills-title'>Contact</h3>
+      <section id='contact'>
 
       <form className='form-card' onSubmit={handleSubmit}>
 
@@ -204,6 +274,7 @@ function App() {
       </button>
 
       </form>
+      </section>
   </div>
   );
 }
